@@ -2,21 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use CreateFuncionariosTable;
 use Illuminate\Http\Request;
+use App\Models\Funcionario;
+use Illuminate\Support\Facades\Redirect;
 
 class FuncionarioController extends Controller
 {
     public function index(){
-        $nome = "Gustavo";
-        $arry = [1,2,3,4,5];
-        $ab = ["1", "2","3", "4", "5"];
+        
+        $funcionarios = Funcionario::all();
     
-        return view('welcome',['nome' => $nome, 'arry' => $arry, 'ab' => $ab]);
+        return view('welcome',['funcionarios' => $funcionarios]);
 
     }
 
     public function create(){
         return view('funcionario.create');
+    }
+
+    public function store(Request $request){
+
+        $funcionario = new  Funcionario;
+        
+        $funcionario->name = $request->name;
+        $funcionario->sobrenome = $request->sobrenome;
+        $funcionario->email = $request->email;
+        $funcionario->telefone = $request->telefone;
+        $funcionario->departamentos_id = $request->departamentos_id;
+
+        $funcionario->save();
+        return redirect('/')->with('msg','Funcionario adicionado com sucesso!');
+
     }
 
 }

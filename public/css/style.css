@@ -1,0 +1,14 @@
+#funcionario-create-container {
+    padding: 30px;
+}
+#funcionario-create-container {
+    font-weight: bold;
+}
+#funcionario-create-container-input,
+#funcionario-create-container-textarea,
+#funcionario-create-container-select {
+    font-size: 12px
+}
+body{
+    background-color: aqua;
+}

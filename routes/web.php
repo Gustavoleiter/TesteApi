@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\DepartamentoController;
 Route::get('/', [FuncionarioController::class, 'index']);
 Route::get('/funcionario/create', [FuncionarioController::class, 'create']);
-
+Route::post('/funcionario', [FuncionarioController::class,'store']);
+Route::get('/departamento/create', [DepartamentoController::class, 'create']);
+Route::post('/departamento', [DepartamentoController::class,'store']);
 
 Route::get('/tarefas', function () {
     return view('tarefas');

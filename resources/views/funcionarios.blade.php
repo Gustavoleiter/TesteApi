@@ -3,7 +3,7 @@
 @section('content')
     
     
-        <h1>seu numero e {{ $id }}</h1>
+        <h1>seu numero e</h1>
 
 
 
