@@ -7,7 +7,7 @@
    
 <div id="funcionario-create-container" class="col-md-6 offset-md-3">
     <h1>Adicionar funcionario</h1>
-    <form action="../funcionario" method="POST">
+    <form action="/funcionario" method="POST">
         @csrf
         <div class="form-grup">
             <label for="title">Nome</label>

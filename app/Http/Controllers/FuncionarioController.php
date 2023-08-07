@@ -25,12 +25,13 @@ class FuncionarioController extends Controller
 
         $funcionario = new  Funcionario;
         
-        $funcionario->name = $request->name;
-        $funcionario->sobrenome = $request->sobrenome;
+        $funcionario->firstName = $request->firstName;
+        $funcionario->lastName = $request->lastName;
         $funcionario->email = $request->email;
-        $funcionario->telefone = $request->telefone;
-        $funcionario->departamentos_id = $request->departamentos_id;
+        $funcionario->phone = $request->phone;
+        $funcionario->departmentos_id = $request->departamentos_id;
 
+    
         $funcionario->save();
         return redirect('/')->with('msg','Funcionario adicionado com sucesso!');
 
